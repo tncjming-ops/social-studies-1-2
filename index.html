@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國小社會科素養評量｜1-2 日本建設臺灣帶來哪些轉變？</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-light: #f0f9ff;
+      --primary-dark: #0369a1;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --warning: #d97706;
+      --warning-light: #fffbeb;
+      --easy: #059669;
+      --medium: #d97706;
+      --hard: #dc2626;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --card-shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+      background: #f8fafc;
+      color: var(--slate-800);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+      color: white;
+      padding: 24px 20px;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-top: 4px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-desc {
+      font-size: 0.95rem;
+      color: #e0f2fe;
+    }
+
+    .tab-nav {
+      display: flex;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .tab-btn.active {
+      background: white;
+      color: #0369a1;
+      border-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-container {
+      max-width: 1080px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .stats-bar {
+      background: white;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--primary);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate-600);
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--slate-800);
+    }
+
+    .progress-box {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .progress-bar-bg {
+      height: 10px;
+      background: var(--slate-100);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #0284c7, #10b981);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-600);
+    }
+
+    .filter-chip {
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--slate-200);
+      background: white;
+      color: var(--slate-700);
+      transition: all 0.2s;
+    }
+
+    .filter-chip:hover {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+
+    .filter-chip.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .filter-chip.chip-easy.active {
+      background: var(--easy);
+      border-color: var(--easy);
+    }
+
+    .filter-chip.chip-medium.active {
+      background: var(--medium);
+      border-color: var(--medium);
+    }
+
+    .filter-chip.chip-hard.active {
+      background: var(--hard);
+      border-color: var(--hard);
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--slate-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      gap: 10px;
+    }
+
+    .q-num-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .q-number {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .q-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .badge-easy {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+
+    .badge-medium {
+      background: #fef3c7;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    .badge-hard {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+
+    .badge-bloom {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    .badge-page {
+      background: #f3e8ff;
+      color: #6b21a8;
+      border: 1px solid #e9d5ff;
+    }
+
+    .q-stem {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--slate-800);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    .q-scenario {
+      background: #f8fafc;
+      border-left: 4px solid #0284c7;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      color: #334155;
+      font-style: italic;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #ffffff;
+      border: 1.5px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.96rem;
+      color: var(--slate-800);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      width: 100%;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: #0284c7;
+      background: #f0f9ff;
+      transform: translateY(-1px);
+    }
+
+    .opt-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-weight: 700;
+      font-size: 0.88rem;
+      flex-shrink: 0;
+      transition: all 0.15s;
+    }
+
+    .opt-text {
+      flex: 1;
+      padding-top: 1px;
+    }
+
+    .option-btn.selected {
+      border-color: #0284c7;
+      background: #e0f2fe;
+    }
+
+    .option-btn.selected .opt-key {
+      background: #0284c7;
+      color: white;
+    }
+
+    .option-btn.correct {
+      border-color: var(--success) !important;
+      background: var(--success-light) !important;
+      color: #14532d !important;
+      font-weight: 700;
+    }
+
+    .option-btn.correct .opt-key {
+      background: var(--success) !important;
+      color: white !important;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-light) !important;
+      color: #7f1d1d !important;
+      text-decoration: line-through;
+    }
+
+    .option-btn.wrong .opt-key {
+      background: var(--danger) !important;
+      color: white !important;
+    }
+
+    .explanation-box {
+      margin-top: 14px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 0.92rem;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .explanation-box.show {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .exp-title {
+      font-weight: 800;
+      color: #0369a1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .exp-content {
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    .print-view, .solutions-view {
+      display: none;
+      background: white;
+      padding: 36px 40px;
+      border-radius: 14px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 30px;
+    }
+
+    .print-header {
+      text-align: center;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .print-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .print-meta-grid {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      font-size: 0.95rem;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    .print-q-item {
+      margin-bottom: 22px;
+      page-break-inside: avoid;
+    }
+
+    .print-q-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .print-q-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      margin-left: 18px;
+      font-size: 0.92rem;
+    }
+
+    .print-btn-bar {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .action-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .action-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .action-btn-secondary {
+      background: #f1f5f9;
+      color: var(--slate-700);
+      border: 1px solid var(--slate-200);
+    }
+
+    .action-btn-secondary:hover {
+      background: #e2e8f0;
+      color: var(--slate-800);
+    }
+
+    .answer-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      margin-bottom: 24px;
+    }
+
+    .answer-table th, .answer-table td {
+      border: 1px solid #cbd5e1;
+      padding: 10px 12px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .answer-table th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .sol-card {
+      border-left: 4px solid #0284c7;
+      background: #f8fafc;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .sol-card-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    @media print {
+      header, .stats-bar, .filter-bar, .tab-nav, .print-btn-bar {
+        display: none !important;
+      }
+      body {
+        background: white !important;
+        padding: 0 !important;
+      }
+      .main-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .print-view {
+        display: block !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
+      .interactive-view, .solutions-view {
+        display: none !important;
+      }
+      .print-q-item {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="header-title-row">
+        <div>
+          <span class="header-badge">🏫 國小六年級社會領域｜108課綱素養導向評量</span>
+          <h1>單元 1-2：日本建設臺灣帶來哪些轉變？</h1>
+        </div>
+        <div>
+          <span class="header-badge" style="background: #10b981;">全卷 25 題標準測驗</span>
+        </div>
+      </div>
+      <p class="header-desc">
+        依據課本第 20～23 頁完整脈絡設計。涵蓋專賣制度、土地戶口調查、交通建設（縱貫鐵路/森林鐵路/基隆高雄港/蘇花臨海公路）、嘉南大圳水利建設（八田與一/烏山頭水庫）與新式糖廠（電力供應/二林蔗農事件）。
+      </p>
+
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchView('interactive')">
+          <span>🎯</span> 線上互動測驗挑戰
+        </button>
+        <button class="tab-btn" onclick="switchView('print')">
+          <span>📄</span> 學生紙筆測驗卷（可列印）
+        </button>
+        <button class="tab-btn" onclick="switchView('solutions')">
+          <span>🔑</span> 教師詳解與題庫手冊
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+
+    <!-- ==================== 模式一：線上互動測驗 ==================== -->
+    <div id="interactiveView" class="interactive-view">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">作答進度</span>
+          <span class="stat-value" id="progressCount">0 / 25</span>
+        </div>
+        <div class="progress-box">
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; color: #64748b;">
+            <span>完成率</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressBar"></div>
+          </div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">目前答對題數</span>
+          <span class="stat-value" id="correctScore" style="color: var(--success);">0 題</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">目前得分（滿分100）</span>
+          <span class="stat-value" id="pointScore" style="color: var(--primary);">0 分</span>
+        </div>
+        <div>
+          <button class="action-btn action-btn-secondary" onclick="resetQuiz()">🔄 重新作答</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <span class="filter-label">難易度篩選：</span>
+        <button class="filter-chip active" onclick="filterDifficulty('all')">🌟 全部題目 (25)</button>
+        <button class="filter-chip chip-easy" onclick="filterDifficulty('easy')">🟢 基礎奠基 (10 題簡單)</button>
+        <button class="filter-chip chip-medium" onclick="filterDifficulty('medium')">🟡 情境理解 (10 題中等)</button>
+        <button class="filter-chip chip-hard" onclick="filterDifficulty('hard')">🔴 素養思辨 (5 題困難)</button>
+      </div>
+
+      <div id="questionsContainer"></div>
+    </div>
+
+    <!-- ==================== 模式二：紙筆考卷（A4 列印模式） ==================== -->
+    <div id="printView" class="print-view">
+      <div class="print-btn-bar">
+        <button class="action-btn" onclick="window.print()">🖨️ 列印考卷 (Ctrl + P)</button>
+        <button class="action-btn action-btn-secondary" onclick="switchView('interactive')">⬅️ 返回互動測驗</button>
+      </div>
+
+      <div class="print-header">
+        <div style="font-size: 1.1rem; font-weight: 700; color: #475569;">國小社會領域 六年級複習評量卷</div>
+        <h2 class="print-title">第 1 單元 1-2：日本建設臺灣帶來哪些轉變？</h2>
+        <div class="print-meta-grid">
+          <span>六年 _____ 班</span>
+          <span>座號：_______</span>
+          <span>姓名：_________________</span>
+          <span>得分：_______________</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px; font-weight: 700; font-size: 0.95rem; background: #f1f5f9; padding: 8px 12px; border-radius: 6px;">
+        ※ 測驗說明：共 25 題單選題（每題 4 分，滿分 100 分），每題請選出一個最適當的答案（選項為 1、2、3、4），並將答案填寫於題號括號內。
+      </div>
+
+      <div id="printQuestionsList"></div>
+    </div>
+
+    <!-- ==================== 模式三：教師手冊與完整解答卷 ==================== -->
+    <div id="solutionsView" class="solutions-view">
+      <div class="print-btn-bar">
+        <button class="action-btn" onclick="copyAllMarkdown()">📋 一鍵複製題庫純文字 (Markdown)</button>
+        <button class="action-btn action-btn-secondary" onclick="switchView('interactive')">⬅️ 返回互動測驗</button>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 800; color: #0369a1; margin-bottom: 12px;">
+        📖 教師備課手冊：25 題標準答案與布魯姆認知維度分析
+      </h2>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-top: 16px; color: #334155;">【快速查對答案卡】</h3>
+      <table class="answer-table">
+        <thead>
+          <tr>
+            <th>題號</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>2</td><td>3</td><td>1</td><td>2</td><td>1</td><td>3</td><td>1</td><td>4</td><td>2</td><td>1</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>題號</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>3</td><td>4</td><td>3</td><td>4</td><td>4</td><td>2</td><td>1</td><td>2</td><td>3</td><td>1</td>
+          </tr>
+        </tbody>
+        <thead>
+          <tr>
+            <th>題號</th><th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th colspan="5" style="background: #f8fafc; color: #94a3b8;">（全卷完）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight: 700; background: #f8fafc;">答案</td>
+            <td>3</td><td>4</td><td>2</td><td>4</td><td>2</td>
+            <td colspan="5" style="background: #f8fafc; color: #94a3b8;">每題 4 分 / 滿分 100</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-top: 24px; margin-bottom: 16px; color: #334155;">
+        【逐題布魯姆指標與深度解析】
+      </h3>
+      <div id="solutionsDetailList"></div>
+    </div>
+
+  </main>
+
+  <script>
+    const quizData = [
+  {
+    "id": 1,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 20 頁",
+    "stem": "日治初期，總督府為了籌措各項重大建設的經費，實施了由官方統一買賣特定商品的「專賣制度」。下列哪一組商品全都是當時的重要專賣項目？",
+    "options": [
+      "茶葉、棉花、甘蔗、稻米",
+      "鴉片、樟腦、食鹽、菸酒",
+      "水泥、玻璃、黃金、煤礦",
+      "牛肉、豬肉、海鮮、蔬菜"
+    ],
+    "answer": 2,
+    "explanation": "總督府將鴉片、樟腦、食鹽、菸酒等民生與重要物資納入「專賣制度」，由官方統購統銷，賺取了龐大的財政收入來支持各項公共建設。"
+  },
+  {
+    "id": 2,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 20 頁",
+    "stem": "日治初期總督府動員大量人力，在全臺灣進行大規模的「土地調查」與「戶口普查」。這項措施最主要的目的何在？",
+    "options": [
+      "幫全臺灣所有老百姓免費蓋新的大房子",
+      "調查誰家廚房煮菜最好吃，出版觀光美食地圖",
+      "掌握全島土地利用現況與人口數據以利政策規畫與課稅",
+      "只是為了清查全島到底有多少隻牛和多少棵樹木"
+    ],
+    "answer": 3,
+    "explanation": "清朝時期政府無法精確掌握臺灣的土地與戶籍；日治初期透過土地測量查出許多沒報稅的「隱田」，並精準調查人口，為政府奠定了穩定的稅收與治理基礎。"
+  },
+  {
+    "id": 3,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 21 頁",
+    "stem": "西元 1908 年，總督府修築完成了貫穿臺灣西部的「縱貫鐵路」（基隆到高雄）。這項交通建設對臺灣內部帶來了什麼大突破？",
+    "options": [
+      "改善南北受河流阻隔的交通，連結西部主要都市加速貨物流通",
+      "讓火車可以直接開過臺灣海峽行駛到日本東京",
+      "造成西部各大城市紛紛沒落，居民被迫遷往高山",
+      "全島馬路全部被廢除，規定出門只能搭乘火車"
+    ],
+    "answer": 1,
+    "explanation": "過去臺灣西部河川湍急、南北往返極為困難；縱貫鐵路通車後，基隆到高雄只需一天即可抵達，打破了地理阻隔，加速人員與物資的大流通。"
+  },
+  {
+    "id": 4,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 21 頁",
+    "stem": "日治時期修建的阿里山森林鐵路蜿蜒曲折、工程非常艱鉅。日本當初費盡千辛萬苦興建這條高山鐵路，最核心的目標是什麼？",
+    "options": [
+      "天天載送觀光客上山看日出與櫻花美景",
+      "獲取山林豐富的木材資源並加速運送",
+      "在山頂興建日本天皇避暑專用的高山皇宮",
+      "專門運送阿里山高山茶到海外展覽比賽"
+    ],
+    "answer": 2,
+    "explanation": "阿里山蘊藏豐富珍貴的紅檜與扁柏等巨木，總督府為了大規模砍伐森林並迅速運下山外銷，特別開闢了阿里山森林鐵路。"
+  },
+  {
+    "id": 5,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 21 頁",
+    "stem": "總督府大力擴建基隆港，讓它成為當時全臺灣最重要的港口之一。基隆港之所以被選為對日本航運的最關鍵港口，最主要的地理優勢是什麼？",
+    "options": [
+      "基隆港在地理位置上距離日本本土最近且航程最短",
+      "基隆港一年四季炎熱乾燥，完全不會下雨",
+      "基隆港周圍地勢極為平坦，完全沒有任何山丘",
+      "只有基隆港的海水深度夠深，其他港口都只是小水溝"
+    ],
+    "answer": 1,
+    "explanation": "基隆港位於臺灣最北部，距離日本本土最近、航程最短，因此被總督府整建為現代化深水港，做為臺灣連接日本的最主要門戶。"
+  },
+  {
+    "id": 6,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 22 頁",
+    "stem": "在嘉南大圳還沒興建以前，嘉南平原的農民生活常處於「看天吃飯」的困境，其最主要的自然氣候原因是？",
+    "options": [
+      "一整年氣溫太低，到處結冰積雪導致農作物全被凍死",
+      "土地全是堅硬的花崗岩，植物根本長不出根",
+      "降水季節分布不均乾季明顯，且缺乏完善灌溉系統",
+      "海水每天漲潮淹沒整座平原，農田全變成鹹水湖"
+    ],
+    "answer": 3,
+    "explanation": "臺灣南部雨量多集中在夏季，秋冬乾季長達半年以上，加上缺乏大型水利設施調節蓄水，過去嘉南平原常面臨嚴重大旱。"
+  },
+  {
+    "id": 7,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 22 頁",
+    "stem": "日治時期受總督府委託，花了十年心血規劃設計烏山頭水庫與嘉南大圳，被農民感念尊稱為「嘉南大圳之父」的水利工程師是誰？",
+    "options": [
+      "八田與一技師",
+      "後藤新平民政長官",
+      "乃木希典總督",
+      "樺山資紀首任總督"
+    ],
+    "answer": 1,
+    "explanation": "日本水利工程師「八田與一」帶領團隊克服艱困地質與瘧疾，歷經十年完成烏山頭水庫與嘉南大圳，大幅改善嘉南平原的灌溉與生產。"
+  },
+  {
+    "id": 8,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 23 頁",
+    "stem": "相較於早期臺灣農村用牛隻拉石磨榨甘蔗汁，日治時期設立的新式糖廠主要引進了何種現代化生產方式？",
+    "options": [
+      "訓練大批猴子和馬匹幫忙搬運甘蔗",
+      "完全不用任何工具，純靠工人用雙手揉捏榨汁",
+      "把甘蔗埋在沙子裡自然發酵轉化為砂糖",
+      "引進現代蒸汽機械榨汁並由發電廠提供穩定電力"
+    ],
+    "answer": 4,
+    "explanation": "日治新式糖廠引進現代化蒸汽動力與大型壓榨機械，並鋪設俗稱「五分車」的輕便鐵路運送甘蔗，讓製糖產量與效率成倍數躍升。"
+  },
+  {
+    "id": 9,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "記憶",
+    "page": "課本第 23 頁",
+    "stem": "西元 1925 年，臺灣知識分子帶領彰化地區的蔗農向日本糖廠爭取公平收購價格，協商破裂後爆發衝突，這場著名的農民抗爭事件叫做什麼？",
+    "options": [
+      "霧社事件",
+      "二林蔗農事件",
+      "噍吧哖事件",
+      "牡丹社事件"
+    ],
+    "answer": 2,
+    "explanation": "西元 1925 年在彰化爆發的「二林蔗農事件」，是臺灣農民團結起來反抗日本大製糖會社壓榨與官方不公的第一聲春雷。"
+  },
+  {
+    "id": 10,
+    "difficulty": "easy",
+    "diffName": "簡單 🟢",
+    "bloom": "理解",
+    "page": "課本第 23 頁",
+    "stem": "臺灣民間曾流傳一句著名俗諺：「第一憨，種甘蔗予會社磅」。這句俗話主要在感嘆種甘蔗農民的何種無奈境遇？",
+    "options": [
+      "糖廠在收購秤重時嚴重不公偷斤減兩，蔗農辛苦卻遭剝削",
+      "農民覺得種甘蔗太輕鬆，天天賺大錢不知道怎麼花",
+      "甘蔗太甜引來太多蜜蜂和螞蟻，農民抓不勝抓很困擾",
+      "糖廠老闆發放的工錢太豐厚，農民感到很不好意思"
+    ],
+    "answer": 1,
+    "explanation": "製糖會社（糖廠）壟斷收購權，在過磅秤重時常動手腳欺騙農民，收購價格又壓得極低，農民辛苦一年卻毫無利潤，才有了這句無奈諺語。"
+  },
+  {
+    "id": 11,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 20 頁",
+    "scenario": "生活故事：清朝時，小陳家在山區做樟腦，可以自由賣給外國洋行賺錢。但到了日治時期，小陳家如果私自製造並販賣樟腦就是違法，會被警察抓去處罰。",
+    "stem": "請問導致小陳家等民間作坊無法再自由經營買賣樟腦的主要體制原因是什麼？",
+    "options": [
+      "政府推行學校義務教育，規定大家都必須去上學",
+      "保甲制度規定每個人每天只能做一種工作",
+      "總督府實施專賣制度，將商品收歸官方統一管理經營",
+      "政府宣布大家每天都要放星期假，禁止做生意"
+    ],
+    "answer": 3,
+    "explanation": "總督府實施專賣制度後，樟腦的製造、收購和販售全部收歸政府專賣局壟斷經營，民間不得私下買賣，否則以走私重罰。"
+  },
+  {
+    "id": 12,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 20 頁",
+    "stem": "社會課本上展示了一張統計圖表：專賣事業（菸酒、樟腦、食鹽等）的收入，長年佔了臺灣總督府歲入的三分之一以上。這張圖表最具體地證明了什麼？",
+    "options": [
+      "總督府根本不需要花任何錢蓋鐵路與港口",
+      "臺灣人民都自願把自己所有的家產捐給政府",
+      "當時全臺灣的老百姓每天只吃鹽巴和抽菸過生活",
+      "專賣事業與鐵路等公有事業，成為總督府籌措建設資金的重要財源"
+    ],
+    "answer": 4,
+    "explanation": "專賣制度為總督府帶來龐大穩定的暴利，這些收益使總督府財政不再仰賴日本母國補助，能夠自給自足並推動各項基礎建設。"
+  },
+  {
+    "id": 13,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 21 頁",
+    "scenario": "物流情境：日治時期，臺南新式糖廠生產了一大批優質砂糖準備外銷，而臺北坪林茶行製作了一批包種茶準備運銷海外。",
+    "stem": "依當時各大港口的位置與運輸效率，這兩批貨品最適合分別從哪座港口出口？",
+    "options": [
+      "砂糖從淡水港出海；茶葉從花蓮港出海",
+      "砂糖從安平港出海；茶葉從高雄港出海",
+      "砂糖經由高雄港出海；包種茶經由基隆港出海",
+      "砂糖從蘇澳港出海；茶葉從安平港出海"
+    ],
+    "answer": 3,
+    "explanation": "高雄港是南部新興現代化港口，鄰近中南部蔗糖產區；基隆港位在北部，鄰近茶葉與樟腦產地且直通日本，是當時最有效率的港口分工。"
+  },
+  {
+    "id": 14,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 21 頁",
+    "stem": "日治時期總督府在斷崖峭壁上修闢了「東臺灣臨海公路」（即今日蘇花公路的前身）。這條開鑿在懸崖上的公路，帶來了什麼關鍵影響？",
+    "options": [
+      "專門用來舉辦全島自行車環島比賽",
+      "吸引日本民眾天天來太魯閣跳水游泳",
+      "讓全臺灣的高速鐵路可以順利開進花蓮",
+      "改善東部地區長期因中央山脈阻隔所導致的交通不便"
+    ],
+    "answer": 4,
+    "explanation": "過去臺灣東部被中央山脈阻隔，聯外交通全靠艱險海運；蘇花臨海公路開通後，連結了宜蘭與花蓮，大幅促進東臺灣的開發與交通往來。"
+  },
+  {
+    "id": 15,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "理解",
+    "page": "課本第 22 頁",
+    "stem": "八田與一在規劃建造龐大的嘉南大圳時，發現烏山頭水庫附近的雨水根本不夠用。為了解決水源問題，他率領工程隊開鑿長隧道，引進了哪一條大河川的溪水？",
+    "options": [
+      "淡水河",
+      "高屏溪",
+      "濁水溪",
+      "曾文溪"
+    ],
+    "answer": 4,
+    "explanation": "八田與一巧妙設計了一條穿越山脈的三千多公尺引水隧道，將「曾文溪」的水引入烏山頭水庫儲存，成功解決灌溉用水不足的難題。"
+  },
+  {
+    "id": 16,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 22 頁",
+    "stem": "西元 1930 年嘉南大圳正式完工啟用。這項當時全東亞最宏偉的水利工程，對嘉南平原的農業生活帶來了什麼巨大的好處？",
+    "options": [
+      "讓所有農田全部變成魚塭，大家通通改行養吳郭魚",
+      "原本乾旱看天吃飯的旱地變為肥沃水田，大幅擴增稻米與甘蔗產量",
+      "造成農田全部鹽化，農民只好紛紛改種仙人掌",
+      "讓嘉南平原一整年都飄著雪花，氣候變得非常寒冷"
+    ],
+    "answer": 2,
+    "explanation": "嘉南大圳綿密的水渠長達上萬公里，灌溉了十五萬甲農田，配合「三年輪作給水法」，使乾旱不毛的荒地變成臺灣最重要的米倉與糖倉。"
+  },
+  {
+    "id": 17,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 23 頁",
+    "stem": "總督府在日月潭興建了當時全東亞最大的水力發電廠。興建這座大規模發電廠，對當時的新式糖廠與現代化工業有何關鍵幫助？",
+    "options": [
+      "為糖廠內部大型壓榨與提煉機械提供源源不絕且穩定的動力",
+      "只是為了在晚上把工廠外面的樹木照得亮晶晶",
+      "讓工廠裡的每位工人每天上班都可以免費吹冷氣",
+      "為了把多餘的電力用海底電纜送到美國去賣錢"
+    ],
+    "answer": 1,
+    "explanation": "現代工業與新式糖廠需要龐大而穩定的動力；日月潭水力發電廠的完工，提供了充沛廉價的電力，有力支撐了臺灣各項工業的快速運轉。"
+  },
+  {
+    "id": 18,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 23 頁",
+    "stem": "日治時期的蔗農阿水伯，雖然知道隔壁村的糖廠出價比較高，卻不敢把甘蔗載去賣。造成阿水伯「無法自由選擇買主」的規定是什麼？",
+    "options": [
+      "總督府規定農民若賺太多錢就必須被沒收農田",
+      "總督府劃定「原料採集區域」，強制規定蔗農只能將甘蔗賣給指定的糖廠",
+      "總督府規定每位農民每年最多只能採收三根甘蔗",
+      "總督府規定只有日本籍的農夫才能出門做買賣"
+    ],
+    "answer": 2,
+    "explanation": "總督府推行「原料採集區域制度」，將農田劃分給各大糖廠，規定農民只能賣給區域內指定的糖廠，農民完全失去比價議價的權利。"
+  },
+  {
+    "id": 19,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "應用",
+    "page": "課本第 23 頁",
+    "scenario": "課本對話：「我們辛辛苦苦流汗種甘蔗，你們糖廠的大秤卻暗中偷斤減兩，收購價格又壓得那麼低，我們全家快餓死了！」農民憤怒地包圍了糖廠原料辦事處。",
+    "stem": "閱讀上述對話，二林蔗農之所以忍無可忍起身抗爭，最直接的導火線是什麼？",
+    "options": [
+      "糖廠製作出來的砂糖味道太淡，不夠香甜",
+      "糖廠規定農民下田前必須先唱完日本國歌",
+      "糖廠在收購時秤重不公偷斤減兩，且以極低價格剝削農民利益",
+      "農民嫌種甘蔗太累，要求糖廠把土地免費送給自己蓋遊樂場"
+    ],
+    "answer": 3,
+    "explanation": "製糖會社壟斷收購，以不合格的磅秤壓低重量、給予極低價格，農民長期的怨氣爆發，在二林成立蔗農組合進行抗爭。"
+  },
+  {
+    "id": 20,
+    "difficulty": "medium",
+    "diffName": "中等 🟡",
+    "bloom": "分析",
+    "page": "課本第 21 頁",
+    "stem": "總督府整合並修築完成西部縱貫鐵路、公路以及基隆港與高雄港。這套現代化交通網絡的建立，對臺灣帶來了什麼深遠的影響？",
+    "options": [
+      "打破過去南北各自分割的局面，促進全島單一市場與物資迅速流通",
+      "造成鄉村人口完全消失，大家都擠在火車站生活",
+      "讓各地的傳統農村市集全數倒閉，不再有買賣",
+      "讓臺灣從此不再受到颱風與地震等天災影響"
+    ],
+    "answer": 1,
+    "explanation": "鐵路與港口的串聯，使臺灣各地的農工產品能在一天之內運送到各大城市或港口出口，形成了全島一體的經濟與生活圈。"
+  },
+  {
+    "id": 21,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "分析",
+    "page": "課本第 20、22、23 頁",
+    "stem": "日治時期總督府興建嘉南大圳、發展新式製糖業與農業水利，使臺灣稻米與蔗糖產量大幅飆升。如果從「殖民統治」的角度來分析，日本大力發展臺灣農業最根本的意圖何在？",
+    "options": [
+      "把臺灣打造成全世界第一名的熱帶水果度假村",
+      "打算把所有收成的白米和砂糖免費分送給亞洲貧困地區",
+      "落實「農業臺灣，工業日本」的政策，將臺灣作為供應日本母國糧食與工業原料的基地",
+      "純粹是出於愛心，希望幫助臺灣農夫全部成為亞洲大富翁"
+    ],
+    "answer": 3,
+    "explanation": "總督府的經濟施政核心是配合日本國內需要：讓「農業臺灣」生產廉價米糖供應「工業日本」，再將日本工廠產品賣給臺灣，鞏固殖民母國利益。"
+  },
+  {
+    "id": 22,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 20 頁",
+    "stem": "在總督府推行的專賣制度中，鴉片被列為專賣項目。總督府一方面宣稱「發放許可證慢慢戒掉鴉片」，另一方面卻將鴉片專賣視為重大財源。這種做法最令人質疑的矛盾何在？",
+    "options": [
+      "鴉片香氣太濃烈，導致臺灣茶葉賣不出去",
+      "專賣局完全沒賺到錢，反而連年虧損破產",
+      "政府發給鴉片吸食者的藥丸全都過期變質",
+      "總督府藉由壟斷鴉片專賣獲取極為龐大的財政暴利，陷入依賴有害健康毒品挹注政府歲入的道德困境"
+    ],
+    "answer": 4,
+    "explanation": "總督府雖然設立漸禁政策，但實際上專賣局每年從鴉片賺取數百萬日圓暴利，靠毒品收入充實國庫與建設，在道德與人權上受到強烈批評。"
+  },
+  {
+    "id": 23,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 23 頁",
+    "stem": "日治時期新式糖廠煙囪聳立、引進精密機械，象徵臺灣邁向現代工業；然而同時間，蔗農卻在不合理收購規定下辛苦掙扎。這個強烈對比說明了當時社會的何種真實面貌？",
+    "options": [
+      "農民之所以貧困，純粹是因為自己不愛努力工作",
+      "現代化工業體制的果實被日本大資本家壟斷，在專制公權力偏袒下，反而加深了對底層生產者的制度性剝削",
+      "糖廠機器經常爆炸，導致農田被嚴重污染",
+      "當時的臺灣農夫其實非常富有，只是喜歡裝窮少繳稅"
+    ],
+    "answer": 2,
+    "explanation": "現代化工業技術雖然引進了臺灣，但工廠利益大多歸日本財閥所有；政府訂定的「原料採集區」等法規偏袒會社，使勞苦農民無法分享經濟發展的甜美成果。"
+  },
+  {
+    "id": 24,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "想法評判",
+    "page": "課本第 22 頁",
+    "stem": "臺灣民間至今感念八田與一建造烏山頭水庫與嘉南大圳的水利貢獻；但歷史學家也提醒大家從多元視角觀察。下列哪一種歷史看法最客觀、最全面？",
+    "options": [
+      "嘉南大圳根本沒有發揮灌溉作用，八田與一只是被隨便吹捧出來的",
+      "水庫建設完全只有害處沒有任何好處，農民反而因此更沒水可用",
+      "我們應該完全拆毀這座工程，因為它是日本人留下來的",
+      "既肯定其傑出的工程專業技術與造福嘉南農田的客觀成效，亦需理解該工程是服務日本帝國米糖掠奪政策的產物"
+    ],
+    "answer": 4,
+    "explanation": "客觀評價歷史人物與建設需兼顧兩面：八田與一在水利專業與對土地的付出值得尊敬，但嘉南大圳的整體目標仍是服務殖民帝國「農業臺灣」的戰略藍圖。"
+  },
+  {
+    "id": 25,
+    "difficulty": "hard",
+    "diffName": "困難 🔴",
+    "bloom": "單元統整",
+    "page": "課本第 20～23 頁全單元",
+    "stem": "【單元大總結】綜合研讀本單元各項措施（土地戶口普查、專賣制度、縱貫鐵路、嘉南大圳與新式糖廠）。若要客觀總結日本推動臺灣近代經濟建設的核心本質，下列哪一項評析最完整也最合理？",
+    "options": [
+      "日本人把臺灣當成永久故鄉，將所有最好的福利毫無保留地留給臺灣民眾",
+      "它是一場以「殖民掠奪與鞏固統治」為核心驅動的工具性現代化：客觀上推進了臺灣的物質基礎建設，但本質上充滿了對臺灣土地資源與人民勞力的體制性剝削",
+      "各項重大建設對臺灣經濟毫無助益，反而讓社會退回原始落後狀態",
+      "這些建設完全是意外發生的，總督府事先根本沒有任何長遠計畫"
+    ],
+    "answer": 2,
+    "explanation": "日治時期的各項近代化建設，客觀上建立了現代臺灣的交通、水利與產業雛形；但其出發點與主要受益者均是日本帝國，本質仍是殖民統治的工具。"
+  }
+];
+
+    const userAnswers = {};
+    let currentFilter = 'all';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderInteractiveQuestions();
+      renderPrintQuestions();
+      renderSolutionsDetail();
+      updateStats();
+    });
+
+    function switchView(viewName) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('interactiveView').style.display = 'none';
+      document.getElementById('printView').style.display = 'none';
+      document.getElementById('solutionsView').style.display = 'none';
+
+      if (viewName === 'interactive') {
+        document.getElementById('interactiveView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+      } else if (viewName === 'print') {
+        document.getElementById('printView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+      } else if (viewName === 'solutions') {
+        document.getElementById('solutionsView').style.display = 'block';
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterDifficulty(diff) {
+      currentFilter = diff;
+      document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+      event.target.classList.add('active');
+      renderInteractiveQuestions();
+    }
+
+    function renderInteractiveQuestions() {
+      const container = document.getElementById('questionsContainer');
+      container.innerHTML = '';
+
+      const filtered = quizData.filter(q => {
+        if (currentFilter === 'all') return true;
+        return q.difficulty === currentFilter;
+      });
+
+      filtered.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.id = `card-q-${q.id}`;
+
+        const diffBadgeClass = q.difficulty === 'easy' ? 'badge-easy' : (q.difficulty === 'medium' ? 'badge-medium' : 'badge-hard');
+        let scenarioHtml = q.scenario ? `<div class="q-scenario">${q.scenario}</div>` : '';
+
+        let optionsHtml = '<div class="options-grid">';
+        q.options.forEach((optText, idx) => {
+          const optNum = idx + 1;
+          const isSelected = userAnswers[q.id] === optNum;
+          const isAnswered = userAnswers[q.id] !== undefined;
+
+          let btnClass = 'option-btn';
+          if (isAnswered) {
+            if (optNum === q.answer) {
+              btnClass += ' correct';
+            } else if (isSelected && optNum !== q.answer) {
+              btnClass += ' wrong';
+            }
+          }
+
+          optionsHtml += `
+            <button class="${btnClass}" onclick="handleSelectOption(${q.id}, ${optNum})" ${isAnswered ? 'disabled' : ''}>
+              <span class="opt-key">${optNum}</span>
+              <span class="opt-text">${optText}</span>
+            </button>
+          `;
+        });
+        optionsHtml += '</div>';
+
+        const isAnswered = userAnswers[q.id] !== undefined;
+        const expShowClass = isAnswered ? 'show' : '';
+
+        const explanationHtml = `
+          <div class="explanation-box ${expShowClass}" id="exp-${q.id}">
+            <div class="exp-title">
+              <span>💡 【素養解析】</span>
+              <span style="font-weight: 700; color: #16a34a; margin-left: 6px;">正確解答：選項 (${q.answer})</span>
+            </div>
+            <div class="exp-content">${q.explanation}</div>
+          </div>
+        `;
+
+        card.innerHTML = `
+          <div class="q-header">
+            <div class="q-num-box">
+              <span class="q-number">第 ${q.id} 題</span>
+              <span class="badge ${diffBadgeClass}">${q.diffName}</span>
+            </div>
+            <div class="q-badges">
+              <span class="badge badge-bloom">🧠 ${q.bloom}</span>
+              <span class="badge badge-page">📖 ${q.page}</span>
+            </div>
+          </div>
+          ${scenarioHtml}
+          <div class="q-stem">${q.stem}</div>
+          ${optionsHtml}
+          ${explanationHtml}
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function handleSelectOption(questionId, selectedOpt) {
+      if (userAnswers[questionId] !== undefined) return;
+      userAnswers[questionId] = selectedOpt;
+      renderInteractiveQuestions();
+      updateStats();
+    }
+
+    function updateStats() {
+      const answeredCount = Object.keys(userAnswers).length;
+      const total = quizData.length;
+      let correctCount = 0;
+
+      quizData.forEach(q => {
+        if (userAnswers[q.id] === q.answer) {
+          correctCount++;
+        }
+      });
+
+      const percent = Math.round((answeredCount / total) * 100);
+      const points = Math.round((correctCount / total) * 100);
+
+      document.getElementById('progressCount').innerText = `${answeredCount} / ${total}`;
+      document.getElementById('progressPercent').innerText = `${percent}%`;
+      document.getElementById('progressBar').style.width = `${percent}%`;
+      document.getElementById('correctScore').innerText = `${correctCount} 題`;
+      document.getElementById('pointScore').innerText = `${points} 分`;
+    }
+
+    function resetQuiz() {
+      if (confirm("確定要清除所有作答紀錄重新開始嗎？")) {
+        for (const key in userAnswers) {
+          delete userAnswers[key];
+        }
+        renderInteractiveQuestions();
+        updateStats();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function renderPrintQuestions() {
+      const printContainer = document.getElementById('printQuestionsList');
+      printContainer.innerHTML = '';
+
+      quizData.forEach(q => {
+        const item = document.createElement('div');
+        item.className = 'print-q-item';
+
+        let scenarioText = q.scenario ? `<div style="font-size: 0.92rem; color: #475569; margin: 4px 0 6px 0; padding: 4px 8px; background: #f8fafc; border-left: 3px solid #64748b;">${q.scenario}</div>` : '';
+
+        item.innerHTML = `
+          <div class="print-q-title">
+            ( &nbsp; &nbsp; ) ${q.id}. ${q.stem}
+          </div>
+          ${scenarioText}
+          <div class="print-q-options">
+            <div>(1) ${q.options[0]}</div>
+            <div>(2) ${q.options[1]}</div>
+            <div>(3) ${q.options[2]}</div>
+            <div>(4) ${q.options[3]}</div>
+          </div>
+        `;
+        printContainer.appendChild(item);
+      });
+    }
+
+    function renderSolutionsDetail() {
+      const solContainer = document.getElementById('solutionsDetailList');
+      solContainer.innerHTML = '';
+
+      quizData.forEach(q => {
+        const card = document.createElement('div');
+        card.className = 'sol-card';
+        card.innerHTML = `
+          <div class="sol-card-header">
+            <span>第 ${q.id} 題【${q.diffName}】｜ 正確解答：(${q.answer})</span>
+            <span style="font-size: 0.85rem; color: #475569;">${q.bloom}・${q.page}</span>
+          </div>
+          <div style="font-weight: 600; margin-bottom: 6px; font-size: 0.95rem;">${q.stem}</div>
+          <div style="font-size: 0.9rem; color: #475569; margin-bottom: 8px;">
+            (1) ${q.options[0]} &nbsp; | &nbsp; (2) ${q.options[1]} &nbsp; | &nbsp; (3) ${q.options[2]} &nbsp; | &nbsp; (4) ${q.options[3]}
+          </div>
+          <div style="font-size: 0.92rem; color: #0369a1; line-height: 1.6; background: white; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+            <strong>🎯 素養深度解析：</strong>${q.explanation}
+          </div>
+        `;
+        solContainer.appendChild(card);
+      });
+    }
+
+    function copyAllMarkdown() {
+      let mdText = `# 國小六年級社會科素養評量題庫\n## 單元 1-2：日本建設臺灣帶來哪些轉變？\n\n`;
+      quizData.forEach(q => {
+        mdText += `### 第 ${q.id} 題【難度：${q.diffName}｜${q.bloom}｜${q.page}】\n`;
+        if (q.scenario) mdText += `> ${q.scenario}\n\n`;
+        mdText += `**題目**：${q.stem}\n`;
+        mdText += `1. ${q.options[0]}\n`;
+        mdText += `2. ${q.options[1]}\n`;
+        mdText += `3. ${q.options[2]}\n`;
+        mdText += `4. ${q.options[3]}\n\n`;
+        mdText += `**【正確解答】**：${q.answer}\n`;
+        mdText += `**【素養解析】**：${q.explanation}\n\n---\n\n`;
+      });
+
+      navigator.clipboard.writeText(mdText).then(() => {
+        alert("✅ 25 題完整題目、選項與詳解已複製到剪貼簿！可直接貼至 Word 或教學文件使用。");
+      }).catch(err => {
+        alert("複製失敗，請手動複製。");
+      });
+    }
+  </script>
+</body>
+</html>
